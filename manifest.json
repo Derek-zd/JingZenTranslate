@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "JingZen Translate",
+  "name": "鲸准翻译",
   "version": "1.0.0",
   "description": "AI-powered webpage translation using OpenAI-compatible APIs. Selection + full-page bilingual translation.",
   "author": "JingZen",

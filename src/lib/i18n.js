@@ -5,7 +5,7 @@
 const messages = {
   zh: {
     // Popup
-    popup_title: 'JingZen Translate',
+    popup_title: '鲸准翻译',
     provider_label: '供应商',
     model_label: '模型',
     selection_label: '划词翻译',
@@ -20,7 +20,7 @@ const messages = {
     warn_no_model: '尚未配置模型，请先打开设置。',
 
     // Options
-    options_title: 'JingZen Translate 设置',
+    options_title: '鲸准翻译 设置',
     options_subtitle: '基于大模型 API 的浏览器翻译，兼容 OpenAI 协议',
     provider_title: 'API 提供商',
     api_url_label: 'API 地址',
@@ -87,8 +87,8 @@ const messages = {
     no_editable_translate: '不支持翻译可编辑区域',
 
     // Right-click menu
-    context_translate_selection: '用 JingZen 翻译选区',
-    context_translate_page: '用 JingZen 翻译整页',
+    context_translate_selection: '用鲸准翻译选区',
+    context_translate_page: '用鲸准翻译整页',
   },
 
   en: {

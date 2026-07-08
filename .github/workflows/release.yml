@@ -3,8 +3,12 @@ name: Build and Release
 on:
   push:
     tags:
-      - 'v*'          # 推送 v1.0.0 等 tag 时触发 release
-  workflow_dispatch:   # 允许手动触发
+      - 'v*'
+  workflow_dispatch:
+
+# 显式声明所需权限
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -17,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies
@@ -46,6 +50,17 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: jingzen-translate-${{ steps.version.outputs.VERSION }}.zip
-          generate_release_notes: true
+          body: |
+            ## 下载安装
+
+            1. 下载 `jingzen-translate-${{ steps.version.outputs.VERSION }}.zip`
+            2. 解压到任意目录
+            3. 打开 `edge://extensions`，开启「开发人员模式」
+            4. 点击「加载解压缩的扩展」，选择解压后的目录
+            5. 点击工具栏图标 → 打开设置，填入 API Key
+
+            ## 变更
+
+            详见 [README](https://github.com/Derek-zd/JingZenTranslate#readme)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

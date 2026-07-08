@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "鲸准翻译",
+  "name": "__MSG_name__",
   "version": "1.0.0",
-  "description": "AI-powered webpage translation using OpenAI-compatible APIs. Selection + full-page bilingual translation.",
+  "description": "__MSG_description__",
+  "default_locale": "zh_CN",
   "author": "JingZen",
   "homepage_url": "https://github.com/Derek-zd/JingZenTranslate",
   "minimum_chrome_version": "100",
@@ -10,7 +11,7 @@
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "dist/popup/popup.html",
-    "default_title": "JingZen Translate"
+    "default_title": "__MSG_action_title__"
   },
   "options_page": "dist/options/options.html",
   "background": {

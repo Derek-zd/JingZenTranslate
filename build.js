@@ -63,6 +63,11 @@ function copyStatic() {
     }
   }
 
+  // Locales (i18n)
+  if (fs.existsSync('_locales')) {
+    fs.cpSync('_locales', 'dist/_locales', { recursive: true });
+  }
+
   // Generate release-ready manifest.json in dist/ (paths without "dist/" prefix)
   if (fs.existsSync('manifest.json')) {
     const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf-8'));

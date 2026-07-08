@@ -1,0 +1,5 @@
+{
+  "name": { "message": "鲸准翻译" },
+  "description": { "message": "基于大模型 API 的网页翻译插件。支持划词翻译、整页双语对照翻译，兼容 OpenAI 协议的多种模型供应商。" },
+  "action_title": { "message": "鲸准翻译" }
+}

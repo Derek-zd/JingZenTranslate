@@ -1,0 +1,5 @@
+{
+  "name": { "message": "JingZen Translate" },
+  "description": { "message": "AI-powered webpage translation using OpenAI-compatible APIs. Selection translation + full-page bilingual translation. Supports DeepSeek, OpenAI, GLM, and more." },
+  "action_title": { "message": "JingZen Translate" }
+}

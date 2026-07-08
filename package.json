@@ -1,0 +1,17 @@
+{
+  "name": "jingzen-translate",
+  "version": "1.0.0",
+  "description": "AI-powered webpage translation extension using OpenAI-compatible APIs. Supports selection translation and full-page bilingual translation.",
+  "private": true,
+  "scripts": {
+    "dev": "node build.js --watch",
+    "build": "node build.js",
+    "release": "node build.js --prod && cd dist && zip -r ../jingzen-translate-v1.0.0.zip . -x '*.map'"
+  },
+  "keywords": ["chrome-extension", "translation", "deepseek", "openai"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}

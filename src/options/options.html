@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JingZen Translate 设置</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <div class="logo">JZ</div>
+        <h1>JingZen Translate</h1>
+      </div>
+      <div class="sub">基于大模型 API 的浏览器翻译，兼容 OpenAI 协议</div>
+
+      <!-- 提供商 -->
+      <label for="providerBtn">API 提供商</label>
+      <div class="model-wrap">
+        <div class="input-action-row">
+          <div class="provider-display" id="providerDisplay">DeepSeek</div>
+          <button type="button" class="model-dropdown-btn" id="providerBtn" title="展开提供商列表">▾</button>
+        </div>
+        <div class="model-options" id="providerOptions"></div>
+        <!-- 隐藏的真实 select，用于存储值 -->
+        <select id="provider" style="display:none;">
+          <option value="__custom__">自定义…</option>
+        </select>
+      </div>
+
+      <!-- API 地址（只读显示） -->
+      <input type="text" id="apiBaseUrl" disabled autocomplete="off" style="margin-top:8px;" />
+
+      <!-- API Key -->
+      <label for="apiKey" style="margin-top:16px;">API Key</label>
+      <div class="input-action-row">
+        <input type="password" id="apiKey" placeholder="sk-…" autocomplete="off" />
+        <button type="button" class="btn-icon" id="editKey" title="修改 API Key">修改</button>
+        <button type="button" class="btn-confirm" id="confirmKey" style="display:none;">确认</button>
+      </div>
+
+      <!-- 模型（输入 + 自定义下拉） -->
+      <label for="model" style="margin-top:16px;">模型</label>
+      <div class="model-wrap">
+        <div class="model-input-row">
+          <input type="text" id="model" placeholder="输入或选择模型名称…" autocomplete="off" />
+          <button type="button" class="model-dropdown-btn" id="modelDropdownBtn" title="展开模型列表">▾</button>
+        </div>
+        <div class="model-options" id="modelOptions"></div>
+      </div>
+      <div class="model-hint" id="modelHint">选择提供商并确认后自动获取模型列表</div>
+
+      <!-- 语言 & 模式 -->
+      <div class="row" style="margin-top:8px;">
+        <div>
+          <label for="sourceLang">源语言</label>
+          <select id="sourceLang">
+            <option value="auto">自动检测</option>
+            <option value="en">英文</option>
+            <option value="ja">日文</option>
+            <option value="ko">韩文</option>
+            <option value="fr">法文</option>
+            <option value="de">德文</option>
+            <option value="es">西班牙文</option>
+            <option value="ru">俄文</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
+        <div>
+          <label for="targetLang">目标语言</label>
+          <select id="targetLang">
+            <option value="zh">中文</option>
+            <option value="en">英文</option>
+            <option value="ja">日文</option>
+            <option value="ko">韩文</option>
+            <option value="fr">法文</option>
+            <option value="de">德文</option>
+            <option value="es">西班牙文</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="pageTranslateMode" style="margin-top:8px;">整页翻译模式</label>
+      <select id="pageTranslateMode">
+        <option value="bilingual">双语对照（原文 + 译文）</option>
+        <option value="replace">直接替换原文</option>
+      </select>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="selectionEnabled" checked />
+        <label for="selectionEnabled">启用划词翻译</label>
+      </div>
+
+      <div class="actions">
+        <button id="save">保存</button>
+        <button id="test">测试连接</button>
+        <span class="status" id="status"></span>
+      </div>
+
+      <div style="text-align:center; margin-top:16px;">
+        <button id="reset" class="btn-reset">重置所有配置</button>
+      </div>
+
+      <div class="footer">
+        整页翻译快捷键：<span class="kbd">Ctrl+Shift+Y</span>（Mac: <span class="kbd">⌘+Shift+Y</span>）
+      </div>
+    </div>
+
+    <!-- ── 自定义供应商弹窗 ── -->
+    <div class="modal-overlay" id="providerModal">
+      <div class="modal-box">
+        <div class="modal-title" id="modalTitle">自定义供应商</div>
+        <div class="modal-field">
+          <label for="modalName">名称</label>
+          <input type="text" id="modalName" placeholder="例如：我的服务器" autocomplete="off" />
+        </div>
+        <div class="modal-field">
+          <label for="modalUrl">API 地址</label>
+          <input type="text" id="modalUrl" placeholder="https://…" autocomplete="off" />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-icon" id="modalCancel">取消</button>
+          <button type="button" class="btn-confirm" id="modalConfirm">确认</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="options.js"></script>
+  </body>
+</html>

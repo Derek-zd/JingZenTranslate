@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">JZ</div>
+      <div class="title">JingZen</div>
+      <div class="subtitle">Translate</div>
+    </div>
+
+    <div id="warn" class="warn" style="display: none"></div>
+
+    <!-- 供应商 / 模型选择 -->
+    <div class="row">
+      <span class="row-label">供应商</span>
+      <div class="row-right">
+        <select id="providerSelect"><option value="">—</option></select>
+      </div>
+    </div>
+    <div class="row">
+      <span class="row-label">模型</span>
+      <div class="row-right">
+        <select id="modelSelect"><option value="">—</option></select>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="row-label">划词翻译</span>
+      <div id="selSwitch" class="switch"></div>
+    </div>
+
+    <div class="row">
+      <span class="row-label">整页模式</span>
+      <select id="pageMode">
+        <option value="bilingual">双语对照</option>
+        <option value="replace">替换原文</option>
+      </select>
+    </div>
+
+    <button id="translatePage" class="primary">翻译本页</button>
+    <button id="options" class="secondary">打开设置</button>
+
+    <div class="footer">快捷键 Ctrl+Shift+Y</div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

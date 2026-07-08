@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "AI-powered webpage translation using OpenAI-compatible APIs. Selection + full-page bilingual translation.",
   "author": "JingZen",
-  "homepage_url": "https://github.com/jingzen/jingzen-translate",
+  "homepage_url": "https://github.com/Derek-zd/JingZenTranslate",
   "minimum_chrome_version": "100",
   "permissions": ["storage", "activeTab", "contextMenus", "scripting"],
   "host_permissions": ["<all_urls>"],

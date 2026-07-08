@@ -63,6 +63,24 @@ function copyStatic() {
     }
   }
 
+  // Generate release-ready manifest.json in dist/ (paths without "dist/" prefix)
+  if (fs.existsSync('manifest.json')) {
+    const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf-8'));
+    // Strip "dist/" prefix from all paths for store-ready zip
+    manifest.action.default_popup = manifest.action.default_popup.replace(/^dist\//, '');
+    manifest.options_page = manifest.options_page.replace(/^dist\//, '');
+    manifest.background.service_worker = manifest.background.service_worker.replace(/^dist\//, '');
+    manifest.content_scripts = manifest.content_scripts.map((cs) => ({
+      ...cs,
+      js: cs.js.map((j) => j.replace(/^dist\//, '')),
+      css: cs.css.map((c) => c.replace(/^dist\//, '')),
+    }));
+    manifest.icons = Object.fromEntries(
+      Object.entries(manifest.icons).map(([k, v]) => [k, v.replace(/^dist\//, '')])
+    );
+    fs.writeFileSync('dist/manifest.json', JSON.stringify(manifest, null, 2));
+  }
+
   console.log('[build] static files copied');
 }
 
